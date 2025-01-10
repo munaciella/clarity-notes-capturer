@@ -18,7 +18,7 @@ const NewDocumentButton = () => {
             const response = await createNewDocument();
 
       if (response.error) {
-        setErrorMessage(response.error); // Set the error message if not logged in
+        setErrorMessage(response.error);
       } else {
         const { docId } = response;
         router.push(`/doc/${docId}`);
@@ -32,7 +32,7 @@ const NewDocumentButton = () => {
         {isPending ? 'Creating...' : 'Create a new document'}
       </Button>
       
-      {errorMessage && <p className="text-red-500">{errorMessage}</p>} {/* Display error message */}
+      {errorMessage && <p className="text-red-500">{errorMessage}</p>}
     </div>
   );
 };
