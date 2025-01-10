@@ -42,6 +42,5 @@ next-env.d.ts
 
 .codegpt
 
-DS_Store
-
 service_key.json
+
