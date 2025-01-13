@@ -2,6 +2,7 @@
 
 import { auth } from '@clerk/nextjs/server';
 import { adminDb } from '../firebase-admin';
+import liveblocks from '@/lib/liveblocks';
 
 export async function createNewDocument() {
   const { userId } = await auth();
@@ -32,4 +33,39 @@ export async function createNewDocument() {
   return {
     docId: docRef.id,
   };
+}
+
+export async function deleteDocument(roomId: string) {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return { error: 'You must be logged in to create a new document' };
+  }
+
+  console.log("deleting document", roomId);
+
+  try {
+    await adminDb.collection('documents').doc(roomId).delete();
+
+    const query = await adminDb
+    .collectionGroup('rooms')
+    .where('roomId', '==', roomId)
+    .get();
+
+    const batch = adminDb.batch();
+    query.docs.forEach((doc) => {
+      batch.delete(doc.ref);
+    });
+
+    await batch.commit();
+
+    await liveblocks.deleteRoom(roomId);
+
+    return {success: true}
+
+  } catch (error) {
+    console.error(error)
+    return {success: false}
+  }
+  
 }
