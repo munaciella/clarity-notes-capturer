@@ -96,3 +96,27 @@ export async function inviteUserToDocument(roomId: string, email: string) {
     return { success: false };
   }
 }
+
+export async function removeUserFromDocument(roomId: string, email: string) {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return { error: 'You must be logged in to remove a user' };
+  }
+
+  console.log('removing user from document', roomId, email);
+
+  try {
+    await adminDb
+    .collection('users')
+    .doc(email)
+    .collection('rooms')
+    .doc(roomId)
+    .delete()
+
+    return { success: true };
+  } catch (error) {
+    console.error(error);
+    return { success: false };
+  }
+}
