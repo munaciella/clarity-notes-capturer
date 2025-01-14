@@ -43,11 +43,11 @@ const DeleteDocument = () => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <Button asChild variant="destructive">
-  <DialogTrigger>Open</DialogTrigger>
+  <DialogTrigger>Delete</DialogTrigger>
   </Button>
   <DialogContent>
     <DialogHeader>
-      <DialogTitle>Are you sure you want to Delete?</DialogTitle>
+      <DialogTitle>Are you sure you want to delete?</DialogTitle>
       <DialogDescription>
         This will delete the document and all its contents, removing all users from the document.
       </DialogDescription>

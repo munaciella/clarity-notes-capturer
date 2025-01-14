@@ -8,7 +8,7 @@ const DocLayout = async ({
   children: React.ReactNode;
   params: { id: string };
 }) => {
-  // Wait for the params to resolve
+
   const { userId } = await auth();
 
   if (!userId) {
@@ -24,7 +24,6 @@ const DocLayout = async ({
     );
   }
 
-  // Wait for params.id to be available before passing it to the RoomProvider
   const { id } = await params;
 
   return <RoomProvider roomId={id}>{children}</RoomProvider>;
