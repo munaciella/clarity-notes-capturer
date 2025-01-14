@@ -1,6 +1,6 @@
 'use client';
 
-import { MenuIcon } from 'lucide-react';
+import { Loader2, MenuIcon } from 'lucide-react';
 import NewDocumentButton from './NewDocumentButton';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { useUser } from '@clerk/nextjs';
@@ -74,9 +74,17 @@ const Sidebar = () => {
     setGroupedData(grouped);
   }, [data]);
 
-  if (loading) {
-    return <p className="p-2">Loading...</p>;
-  }
+  // if (loading) {
+  //   return <p className="p-2">Loading...</p>;
+  // }
+
+if (loading) {
+  return (
+    <div className="flex p-4 mt-2">
+      <Loader2 className="animate-spin text-orange-500" size={40} />
+    </div>
+  );
+}
 
   if (error) {
     return <p className="p-2 text-red-500">Error loading documents</p>;
@@ -86,8 +94,8 @@ const Sidebar = () => {
     <>
       <NewDocumentButton />
 
-      <div className='flex py-4 flex-col space-y-4 md:max-w-36'>
       {/* My documents */}
+      <div className='flex py-4 flex-col space-y-4 md:max-w-36'>
       {groupedData.owner.length === 0 ? (
         <h2 className="text-gray-500 font-semibold text-sm">No documents found</h2>
       ): (
@@ -98,19 +106,17 @@ const Sidebar = () => {
         ))}
         </>
       )}
-      </div>
-
 
       {/* Shared with me */}
       {groupedData.editor.length > 0 && (
         <>
         <h2 className="text-gray-500 font-semibold text-sm">Shared with me</h2>
         {groupedData.editor.map((doc) => (
-            <SidebarOption key={doc.id} id={doc.id} href={`/doc/${doc.id}`} />
+          <SidebarOption key={doc.id} id={doc.id} href={`/doc/${doc.id}`} />
         ))}
     </>
       )}
-      {/* List... */}
+      </div>
       </>
   );
 

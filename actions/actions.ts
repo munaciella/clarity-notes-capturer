@@ -39,18 +39,18 @@ export async function deleteDocument(roomId: string) {
   const { userId } = await auth();
 
   if (!userId) {
-    return { error: 'You must be logged in to create a new document' };
+    return { error: 'You must be logged in to delete a document' };
   }
 
-  console.log("deleting document", roomId);
+  console.log('deleting document', roomId);
 
   try {
     await adminDb.collection('documents').doc(roomId).delete();
 
     const query = await adminDb
-    .collectionGroup('rooms')
-    .where('roomId', '==', roomId)
-    .get();
+      .collectionGroup('rooms')
+      .where('roomId', '==', roomId)
+      .get();
 
     const batch = adminDb.batch();
     query.docs.forEach((doc) => {
@@ -61,11 +61,38 @@ export async function deleteDocument(roomId: string) {
 
     await liveblocks.deleteRoom(roomId);
 
-    return {success: true}
-
+    return { success: true };
   } catch (error) {
-    console.error(error)
-    return {success: false}
+    console.error(error);
+    return { success: false };
   }
+}
+
+export async function inviteUserToDocument(roomId: string, email: string) {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return { error: 'You must be logged in to invite a new user' };
+  }
+
+  console.log('inviting user to document', roomId, email);
   
+  try {
+    await adminDb
+    .collection('users')
+    .doc(email)
+    .collection('rooms')
+    .doc(roomId)
+    .set({
+      userId: email,
+      role: 'editor',
+      createdAt: new Date(),
+      roomId,
+    })
+
+    return { success: true };
+  } catch (error) {
+    console.error(error);
+    return { success: false };
+  }
 }

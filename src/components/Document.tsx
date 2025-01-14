@@ -9,6 +9,7 @@ import { useDocumentData } from 'react-firebase-hooks/firestore';
 import Editor from './Editor';
 import useOwner from '@/lib/useOwner';
 import DeleteDocument from './DeleteDocument';
+import InviteUser from './InviteUser';
 
 const Document = ({ id }: { id: string }) => {
   const [data, loading, error] = useDocumentData(doc(db, 'documents', id));
@@ -46,7 +47,9 @@ const Document = ({ id }: { id: string }) => {
     <div className='flex-1 h-full bg-white p-5'>
       <div className='flex max-w-6xl mx-auto justify-between pb-5'>
         <form className='flex flex-1 space-x-2' onSubmit={updateTitle}>
-          <Input value={input} onChange={(e) => setInput(e.target.value)} />
+          <Input value={input} onChange={(e) => setInput(e.target.value)} 
+          className='font-bold'
+          />
 
           <Button disabled={isUpdating || !input.trim()} type="submit">
             {isUpdating ? 'Updating...' : 'Update'}
@@ -54,6 +57,7 @@ const Document = ({ id }: { id: string }) => {
 
           {isOwner && (
             <>
+            <InviteUser />
             <DeleteDocument />
             </>
           )}
@@ -70,6 +74,8 @@ const Document = ({ id }: { id: string }) => {
 
       {/* Collaborative Editor */}
       <Editor />
+
+      
     </div>
   );
 };
