@@ -46,38 +46,41 @@ const Document = ({ id }: { id: string }) => {
   }
 
   return (
-    <div className='flex-1 h-full bg-white p-5'>
-      <div className='flex max-w-6xl mx-auto justify-between pb-5'>
-        <form className='flex flex-1 space-x-2' onSubmit={updateTitle}>
-          <Input value={input} onChange={(e) => setInput(e.target.value)} 
-          className='font-bold'
+    <div className="flex-1 h-full bg-white p-5">
+      <div className="flex max-w-6xl mx-auto justify-between pb-5">
+        <form className="flex flex-1 space-x-2" onSubmit={updateTitle}>
+          <Input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className="font-bold"
           />
 
-          <Button disabled={isUpdating || !input.trim()} type="submit" className='p-3'>
+          <Button
+            disabled={isUpdating || !input.trim()}
+            type="submit"
+            className="p-3"
+          >
             {isUpdating ? 'Updating...' : 'Update'}
           </Button>
 
           {isOwner && (
             <>
-            <InviteUser />
-            <DeleteDocument />
+              <InviteUser />
+              <DeleteDocument />
             </>
           )}
         </form>
       </div>
 
-      <div className='flex max-w-6xl mx-auto justify-between items-center mb-5'>
+      <div className="flex max-w-6xl mx-auto justify-between items-center mb-5">
         <ManageUsers />
 
         <Avatars />
-
       </div>
 
-      <hr className='pb-10' />
+      <hr className="pb-10" />
 
       <Editor />
-
-      
     </div>
   );
 };
