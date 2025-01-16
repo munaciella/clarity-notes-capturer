@@ -43,7 +43,7 @@ const InviteUser = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <Button asChild variant="outline">
+        <Button asChild variant="outline" className="p-3">
   <DialogTrigger>Invite</DialogTrigger>
   </Button>
   <DialogContent>

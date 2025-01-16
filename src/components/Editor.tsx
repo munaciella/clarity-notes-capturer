@@ -13,6 +13,9 @@ import {useCreateBlockNote } from '@blocknote/react';
 import '@blocknote/core/fonts/inter.css';
 import '@blocknote/shadcn/style.css';
 import stringToColor from '@/lib/stringToColor';
+import TranslateDocument from './TranslateDocument';
+//import ChatToDocument from './ChatToDocument';
+import SummariseDocument from './SummariseDocument';
 
 type EditorProps = {
 doc: Y.Doc;
@@ -67,7 +70,7 @@ const Editor = () => {
     return null;
   }
 
-  const style = `hover:text-white ${
+  const style = `hover:text-white p-3 ${
     darkMode
     ? 'text-gray-300 bg-gray-700 hover:bg-gray-100 hover:text-gray-700'
     : 'text-gray-700 bg-gray-200 hover:bg-gray-300 hover:text-gray-700'
@@ -76,14 +79,13 @@ const Editor = () => {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="flex items-center gap-2 justify-end mb-10">
-        {/* TranslateDocument AI */}
-        {/* ChatToDocument AI */}
+        <TranslateDocument doc={doc} />
+        {/* <ChatToDocument doc={doc} /> */}
+        <SummariseDocument doc={doc} />
 
-        {/* Dark Mode */}
         <Button className={style} onClick={() => setDarkMode(!darkMode)}>{darkMode ? <SunIcon /> : <MoonIcon />}</Button>
       </div>
 
-      {/* BlockNote */}
       <BlockNote doc={doc} provider={provider} darkMode={darkMode} />
     </div>
   );
