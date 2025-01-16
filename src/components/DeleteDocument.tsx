@@ -42,7 +42,7 @@ const DeleteDocument = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <Button asChild variant="destructive">
+        <Button asChild variant="destructive" className="p-3">
   <DialogTrigger>Delete</DialogTrigger>
   </Button>
   <DialogContent>

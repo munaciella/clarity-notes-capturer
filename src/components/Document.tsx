@@ -53,7 +53,7 @@ const Document = ({ id }: { id: string }) => {
           className='font-bold'
           />
 
-          <Button disabled={isUpdating || !input.trim()} type="submit">
+          <Button disabled={isUpdating || !input.trim()} type="submit" className='p-3'>
             {isUpdating ? 'Updating...' : 'Update'}
           </Button>
 
