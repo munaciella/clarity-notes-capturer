@@ -24,7 +24,7 @@ const DocLayout = async ({
     );
   }
 
-  const { id } = await params;
+  const { id } = params;
 
   return <RoomProvider roomId={id}>{children}</RoomProvider>;
 };
