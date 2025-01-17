@@ -6,8 +6,8 @@ import Sidebar from '@/components/Sidebar';
 import { Toaster } from '@/components/ui/sonner';
 
 export const metadata: Metadata = {
-  title: 'Notion Clone',
-  description: 'Welcome to my Notion Clone',
+  title: 'Clarity Notes',
+  description: 'Welcome to the Ultimate Notes Capturer',
 };
 
 export default function RootLayout({
@@ -18,6 +18,9 @@ export default function RootLayout({
   return (
       <ClerkProvider>
     <html lang="en">
+    <head>
+          <link rel="icon" href="/favicon.ico" />
+        </head>
       <body>
         <Header />
 
