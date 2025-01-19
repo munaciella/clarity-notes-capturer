@@ -58,21 +58,23 @@ import { Button } from './ui/button'
 import { useTransition } from 'react'
 import { createNewDocument } from '../../actions/actions'
 import { useState } from 'react'
-import { useAuth } from '@clerk/nextjs' // Use Clerk's hook to check auth status
+import { useAuth } from '@clerk/nextjs'
 
 const NewDocumentButton = () => {
   const [isPending, startTransition] = useTransition()
   const router = useRouter()
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
-  const { isSignedIn, isLoaded } = useAuth() // Clerk's auth hook
+  const { isSignedIn, isLoaded } = useAuth()
 
   const handleCreateNewDocument = async () => {
     setErrorMessage(null)
 
-    // Check if Clerk is loaded and user is signed in
-    if (!isLoaded) return // Wait for auth status to be determined
+    if (!isLoaded) return
     if (!isSignedIn) {
-      // You can rely on middleware to handle the redirect
+      // Explicit redirect if user isn't signed in
+      window.location.href = `https://accounts.clarity-capture.com/sign-in?redirect_url=${encodeURIComponent(
+        window.location.href
+      )}`
       return
     }
 
@@ -93,7 +95,6 @@ const NewDocumentButton = () => {
       <Button onClick={handleCreateNewDocument} disabled={isPending}>
         {isPending ? 'Creating...' : 'Create a new document'}
       </Button>
-
       {errorMessage && <p className="text-red-500">{errorMessage}</p>}
     </div>
   )
