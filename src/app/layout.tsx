@@ -4,6 +4,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
 import { Toaster } from '@/components/ui/sonner';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Clarity Notes',
@@ -31,6 +32,7 @@ export default function RootLayout({
         </div>
 
         <Toaster position='top-center' />
+        <Footer />
         </body>
     </html>
     </ClerkProvider>

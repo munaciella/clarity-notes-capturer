@@ -31,7 +31,7 @@ Welcome to **Clarity Notes** – the ultimate notes capturing and collaboration 
 
 ## Live Demo
 
-- [Live Demo Link](https://clarity-capture.vercel.app/)
+- [Live Demo Link](https://clarity-capture.com)
 
 ---
 
@@ -88,8 +88,8 @@ Before running the project locally, ensure you have the following installed:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/your-repo/clarity-notes.git
-   cd clarity-notes
+   git clone https://github.com/munaciella/clarity-notes-capturer.git
+   cd clarity-notes-capturer
    ```
 
 2. **Install Dependencies**:
