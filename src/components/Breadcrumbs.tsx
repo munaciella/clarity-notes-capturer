@@ -10,6 +10,7 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { Fragment } from 'react';
+import Image from 'next/image';
 
 const Breadcrumbs = () => {
   const pathname = usePathname();
@@ -23,11 +24,21 @@ const Breadcrumbs = () => {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              <BreadcrumbLink href="/">
+                <Image
+                  src="/clarity-logo.png"
+                  alt="Clarity Notes Logo"
+                  width={32}
+                  height={32}
+                  className="inline-block"
+                />
+              </BreadcrumbLink>{' '}
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>This page has not been created yet</BreadcrumbPage>
+              <BreadcrumbPage>
+                This page has not been created yet
+              </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -40,10 +51,18 @@ const Breadcrumbs = () => {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          <BreadcrumbLink href="/">
+              <Image
+                src="/clarity-logo.png"
+                alt="Clarity Notes Logo"
+                width={32}
+                height={32}
+                className="inline-block"
+              />
+            </BreadcrumbLink>
           </BreadcrumbItem>
           {segments.map((segment, index) => {
-            if (segment === 'doc') return null; // Skip "doc" in the breadcrumbs
+            if (segment === 'doc') return null;
 
             const href = `/${segments.slice(0, index + 1).join('/')}`;
             const isLast = index === segments.length - 1;
