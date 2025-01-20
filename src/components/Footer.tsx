@@ -10,8 +10,8 @@ const Footer = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/clarity-logo.png"
-              alt="Clarity Notes Logo"
+              src="/Clarity-Capture-logo.png"
+              alt="Clarity Capture Logo"
               className="h-12 w-12"
               width={40}
               height={40}
@@ -35,7 +35,7 @@ const Footer = () => {
               >
                 <Image
                   src="/notion-avatar.PNG"
-                  alt="Francesco Vurchio"
+                  alt="Francesco Vurchio Notion Avatar"
                   className="inline h-14 w-14 rounded-full -mr-2"
                   width={40}
                   height={40}

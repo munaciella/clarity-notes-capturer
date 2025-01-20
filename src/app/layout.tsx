@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/sonner';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Clarity Notes',
+  title: 'Clarity Capture',
   description: 'Welcome to the Ultimate Notes Capturer',
 };
 

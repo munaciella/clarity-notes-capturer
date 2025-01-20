@@ -26,10 +26,10 @@ const Breadcrumbs = () => {
             <BreadcrumbItem>
               <BreadcrumbLink href="/">
                 <Image
-                  src="/clarity-logo.png"
-                  alt="Clarity Notes Logo"
-                  width={32}
-                  height={32}
+                  src="/Clarity-Capture-logo.png"
+                  alt="Clarity Capture Logo"
+                  width={36}
+                  height={36}
                   className="inline-block"
                 />
               </BreadcrumbLink>{' '}
@@ -53,10 +53,10 @@ const Breadcrumbs = () => {
           <BreadcrumbItem>
           <BreadcrumbLink href="/">
               <Image
-                src="/clarity-logo.png"
-                alt="Clarity Notes Logo"
-                width={32}
-                height={32}
+                src="/Clarity-Capture-logo.png"
+                alt="Clarity Capture Logo"
+                width={36}
+                height={36}
                 className="inline-block"
               />
             </BreadcrumbLink>
