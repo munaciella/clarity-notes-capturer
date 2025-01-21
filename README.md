@@ -1,21 +1,22 @@
-# Clarity Notes
+# Clarity Capture
 
-Welcome to **Clarity Notes** – the ultimate notes capturing and collaboration platform. Built with modern technologies, this app enables seamless note-taking, real-time collaboration, and powerful backend functionalities.
+Welcome to **Clarity Capture** – the ultimate notes capturing and collaboration platform. Built with modern technologies, this app enables seamless note-taking, real-time collaboration, and powerful backend functionalities.
 
 ## Table of Contents
 
 1. [Video Demo](#video-demo)
 2. [Live Demo Link](#live-demo-link)
-3. [Overview](#overview)
-4. [Features](#features)
-5. [Technologies Used](#technologies-used)
-6. [Getting Started](#getting-started)
+3. [Cloudflare API](#cloudflare-api)
+4. [Overview](#overview)
+5. [Features](#features)
+6. [Technologies Used](#technologies-used)
+7. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
    - [Installation](#installation)
    - [Running Locally](#running-locally)
-7. [Environment Variables](#environment-variables)
-8. [Deployment](#deployment)
-9. [Contact](#contact)
+8. [Environment Variables](#environment-variables)
+9. [Deployment](#deployment)
+10. [Contact](#contact)
 
 ---
 
@@ -35,9 +36,15 @@ Welcome to **Clarity Notes** – the ultimate notes capturing and collaboration 
 
 ---
 
+## Cloudflare API
+
+- [Cloudflare Workers API](https://github.com/munaciella/notion-clone-api)
+
+---
+
 ## Overview
 
-**Clarity Notes** is a feature-rich note-taking application designed for modern users. Whether you're working on a team project or organizing your personal notes, Clarity Notes ensures a smooth, intuitive, and collaborative experience.
+**Clarity Capture** is a feature-rich note-taking application designed for modern users. Whether you're working on a team project or organizing your personal notes, Clarity Capture ensures a smooth, intuitive, and collaborative experience.
 
 ### Key Highlights:
 
