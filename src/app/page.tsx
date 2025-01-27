@@ -10,7 +10,7 @@ export default function Home() {
       </main>
 
       {/* Welcome Message and Purpose Section */}
-      <section className="text-center max-w-3xl mx-auto mt-16 px-4">
+      <section className="text-center max-w-3xl mx-auto mt-20 px-4">
         <h2 className="text-2xl font-semibold text-gray-800">
           Welcome to Clarity Capture
         </h2>
