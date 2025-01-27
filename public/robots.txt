@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.clarity-capture.com
+
+# Sitemaps
+Sitemap: https://www.clarity-capture.com/sitemap.xml
