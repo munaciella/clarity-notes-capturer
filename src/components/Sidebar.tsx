@@ -41,6 +41,15 @@ const Sidebar = () => {
 
   const userEmail = isSignedIn && user?.emailAddresses?.[0]?.emailAddress;
 
+  useEffect(() => {
+    if (!isSignedIn) {
+      setGroupedData({
+        owner: [],
+        editor: [],
+      });
+    }
+  }, [isSignedIn]);
+
   const [data, loading, error] = useCollection(
     userEmail
       ? query(collectionGroup(db, 'rooms'), where('userId', '==', userEmail))
