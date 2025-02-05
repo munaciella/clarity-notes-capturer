@@ -10,7 +10,7 @@ export default function Home() {
         <h1 className="font-bold">Get started with creating a New Document</h1>
       </main>
 
-      <section className='flex items-center justify-center mt-10'>
+      <section className='flex items-center justify-center mt-8'>
       <Image 
       src="/Chill-Time.png" 
       alt="Clarity Capture Logo" 
@@ -21,11 +21,11 @@ export default function Home() {
       </section>
 
       {/* Welcome Message and Purpose Section */}
-      <section className="text-center max-w-3xl mx-auto px-4 mt-10">
+      <section className="text-center max-w-3xl mx-auto px-4 mt-4">
         <h2 className="text-2xl font-semibold text-gray-800">
           Welcome to Clarity Capture
         </h2>
-        <p className="text-lg text-gray-600 mt-4">
+        <p className="text-lg text-gray-600 mt-2">
           Clarity Capture is the ultimate notes capturing and collaboration platform. 
           With real-time collaboration, AI-powered features, and a versatile note editor, 
           it&apos;s designed to help teams and individuals organise, manage, and collaborate on notes 

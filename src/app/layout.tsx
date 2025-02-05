@@ -17,24 +17,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <ClerkProvider>
-    <html lang="en">
-    <head>
+    <ClerkProvider>
+      <html lang="en">
+        <head>
           <link rel="icon" href="/favicon.ico" />
         </head>
-      <body>
-        <Header />
+        <body>
+          <Header />
 
-        <div className="flex min-h-screen">
-          < Sidebar />
+          <div className="flex min-h-screen">
+            <Sidebar />
 
-        <div className='flex-1 p-4 bg-gray-100 overflow-y-auto scrollbar-hide'>{children}</div>
-        </div>
+            <div className="flex-1 p-4 bg-gray-100 overflow-y-auto scrollbar-hide">
+              {children}
+            </div>
+          </div>
 
-        <Toaster position='top-center' />
-        <Footer />
+          <Toaster position="top-center" />
+
+          <Footer />
         </body>
-    </html>
+      </html>
     </ClerkProvider>
   );
 }
