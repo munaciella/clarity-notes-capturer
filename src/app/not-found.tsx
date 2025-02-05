@@ -15,8 +15,8 @@ const NotFound = () => {
         src={astronaut} 
         alt="Astronaut" 
         className="mx-auto"
-        height={240} 
-        width={240}
+        height={220} 
+        width={220}
         />
         <h1 className="text-6xl font-bold text-red-500">404</h1>
         <h2 className="text-xl font-semibold text-gray-700">Page Not Found</h2>
