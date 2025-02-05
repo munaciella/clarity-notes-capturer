@@ -1,4 +1,5 @@
 import { ArrowLeftCircle } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -9,8 +10,18 @@ export default function Home() {
         <h1 className="font-bold">Get started with creating a New Document</h1>
       </main>
 
+      <section className='flex items-center justify-center mt-10'>
+      <Image 
+      src="/Chill-Time.png" 
+      alt="Clarity Capture Logo" 
+      width={200} 
+      height={200} 
+      priority
+      />
+      </section>
+
       {/* Welcome Message and Purpose Section */}
-      <section className="text-center max-w-3xl mx-auto mt-20 px-4">
+      <section className="text-center max-w-3xl mx-auto px-4 mt-10">
         <h2 className="text-2xl font-semibold text-gray-800">
           Welcome to Clarity Capture
         </h2>
