@@ -14,8 +14,8 @@ export default function Home() {
       <Image 
       src="/Chill-Time.png" 
       alt="Clarity Capture Logo" 
-      width={200} 
-      height={200} 
+      width={330} 
+      height={330} 
       priority
       />
       </section>
