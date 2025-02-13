@@ -21,6 +21,7 @@ export default function RootLayout({
       <html lang="en">
         <head>
           <link rel="icon" href="/favicon.ico" />
+          <link rel="canonical" href="https://www.clarity-capture.com/" />
         </head>
         <body>
           <Header />
