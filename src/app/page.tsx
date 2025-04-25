@@ -10,6 +10,22 @@ export default function Home() {
         <h1 className="font-bold">Get started with creating a New Document</h1>
       </main>
 
+      <div className="mx-auto max-w-2xl text-center space-y-6 px-6 lg:px-8 mt-16">
+            <p
+              role="alert"
+              className="inline-block bg-red-200 dark:bg-red-900 px-4 py-2 rounded-md text-red-700 dark:text-red-300 font-medium text-md"
+            >
+              <span className="mr-1">⚠️</span>
+              <strong>Demo Notice:</strong>{" "}
+              <span className="font-light">
+                This live demo is provided solely for testing and development
+                purposes. Functionality may be limited, unstable, or subject to
+                sudden service restrictions. Use at your own risk;
+                production-grade reliability is not guaranteed.
+              </span>
+            </p>
+            </div>
+
       <section className='flex items-center justify-center mt-8'>
       <Image 
       src="/Chill-Time.png" 
