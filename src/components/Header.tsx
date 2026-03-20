@@ -1,10 +1,11 @@
 'use client';
 
-import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from '@clerk/nextjs';
+import { Show, SignInButton, UserButton, useUser } from '@clerk/nextjs';
 import Breadcrumbs from './Breadcrumbs';
 
 const Header = () => {
   const { user } = useUser();
+
   return (
     <div className="flex justify-between items-center p-4">
       {user && (
@@ -17,13 +18,13 @@ const Header = () => {
       <Breadcrumbs />
 
       <div>
-        <SignedOut>
-            <SignInButton />
-        </SignedOut>
+        <Show when="signed-out">
+          <SignInButton />
+        </Show>
 
-        <SignedIn>
-        <UserButton />
-        </SignedIn>
+        <Show when="signed-in">
+          <UserButton />
+        </Show>
       </div>
     </div>
   );
