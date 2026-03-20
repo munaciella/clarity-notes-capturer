@@ -4,6 +4,25 @@ import { auth } from '@clerk/nextjs/server';
 import { adminDb } from '../firebase-admin';
 import liveblocks from '@/lib/liveblocks';
 
+export async function updateDocumentTitle(roomId: string, title: string) {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return { error: 'You must be logged in to update a document title' };
+  }
+
+  try {
+    await adminDb.collection('documents').doc(roomId).update({
+      title: title.trim(),
+    });
+
+    return { success: true };
+  } catch (error) {
+    console.error(error);
+    return { success: false };
+  }
+}
+
 export async function createNewDocument() {
   const { userId } = await auth();
 
